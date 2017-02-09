@@ -4,7 +4,7 @@ defmodule PhoenixTrello.Mixfile do
   def project do
     [app: :phoenix_trello,
      version: "0.0.1",
-     elixir: "~> 1.2",
+     elixir: "~> 1.4.1",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
      build_embedded: Mix.env == :prod,
@@ -18,8 +18,7 @@ defmodule PhoenixTrello.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {PhoenixTrello, []},
-     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+     extra_applications: [:logger]]
   end
 
   # Specifies which paths to compile per environment.
@@ -37,7 +36,9 @@ defmodule PhoenixTrello.Mixfile do
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:comeonin, "~> 3.0"},
+     {:guardian, "~> 0.14.2"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
